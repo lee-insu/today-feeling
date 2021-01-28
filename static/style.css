@@ -1,10 +1,10 @@
-* {background-color: #fff; box-sizing: border-box;}
+* {box-sizing: border-box;}
 body {margin: 0 auto; font-family: AppleSDGothicNeo;}
 a {all:unset;}
 a:link {text-decoration: none;}
 a:active {text-decoration: none;}
 a:visited {text-decoration: none; color: #707070;}
-a:hover{text-decoration: none;}
+a:hover{text-decoration: none; cursor: pointer;}
 ul {margin: 0; padding: 0;}
 li{list-style: none;}
 
@@ -23,30 +23,27 @@ header {
     overflow: hidden;
 }
 
+
 .header-container {
     width: 100%;
     height: 100%;
     display: flex;
     position: relative;
+    
 }
-.header-logo {
-    margin: 25px 0 21px 41%;
-}
+.header-logo {margin: 25px 0 21px 43%;}
 
 .header-logo > a > img {
   width: 171px;
   height: 42px;
 }
 
-.header-list {
+.header-list {width: 100%;}
 
-    width: 100%;
-
-}
 .header-list ul {
     width: 21%;
     height: 100%;
-    margin:42px 0 29px 22.8%;
+    margin:42px 0 29px 21.8%;
     display: flex;
     justify-content: space-between;
     position: absolute;
@@ -65,4 +62,37 @@ header {
   color: #707070;
 }
 
+section {width: 100%;}
 
+.face-upload {
+    margin-top: 2px;
+    width: 100%;
+    height: 446px;
+    border: dashed 3px #F8F8F8;
+    border-radius: 10px;
+    position: relative;
+}
+
+.face-image {width: 100%;}
+
+.face-image > a > img {
+    width: auto;
+    height: 430px;
+    left:200px;
+    position: absolute;
+}
+
+.face-text {
+    font-family: AppleSDGothicNeo;
+    font-size: 26px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.19;
+    letter-spacing: normal;
+    color: #707070;
+    position: absolute;
+    bottom: 31px;
+    left:392px;
+
+}   
