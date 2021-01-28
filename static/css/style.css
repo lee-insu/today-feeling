@@ -49,7 +49,7 @@ header {
     position: absolute;
 }
 
-.header-list ul li {
+.header-list > ul > li {
   width: 50px;
   height: 17px;
   font-size: 14px;
@@ -62,6 +62,12 @@ header {
   color: #707070;
 }
 
+.header-list > ul > li >a:hover {
+    transition: 0.2s;
+    color:#EB7E52
+
+}
+
 section {width: 100%;}
 
 .face-upload {
@@ -70,6 +76,10 @@ section {width: 100%;}
     height: 446px;
     position: relative;
 }
+.face-image{transition: 0.2s;}
+
+.face-image:hover {transform:scale(1.02);}
+
 
 .face-image {width: 100%;}
 
@@ -127,7 +137,12 @@ section {width: 100%;}
     flex-wrap: wrap;
 }
 
-.emotion-card {margin: 0 31px 28px 0;}
+.emotion-card {margin: 0 31px 28px 0; transition: 0.4s;}
+
+.emotion-card:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 0 8px 8px 0 rgba(250, 230, 230, 0.16);
+}
 
 
 .emotion-image > img {
@@ -152,3 +167,37 @@ section {width: 100%;}
     margin-top: 19px;
 }
 
+#backtotop {
+    width: 40px;
+    height: 40px;
+    right: 30px;
+    bottom: 30px;
+    position: fixed;
+    transition-property: opacity, visibility;
+    transition-duration: 0.5s, 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+    color: #fff;
+    
+}
+
+#backtotop::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-size: 1.5rem;
+    line-height: 40px;
+    color: #D4D1CF;
+}
+
+#backtotop.show {
+    opacity: 1;
+    visibility: visible;
+    
+}
+
+#backtotop.show:hover {
+    cursor: pointer;
+    transition: 0.4s;
+    transform: translate(0,-3px);
+}
