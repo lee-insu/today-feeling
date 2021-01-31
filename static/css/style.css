@@ -318,6 +318,59 @@ input {
     margin: -8px 0 5px 0;
 }
 
+.emotion-container {
+    margin-top: 134px;
+}
+
+.emotion-title {
+  height: 43px;
+  font-family: AppleSDGothicNeo;
+  font-size: 35px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.23;
+  letter-spacing: normal;
+  text-align: center;
+  color: #1f0808;
+}
+
+.emotion-image{
+    margin-top: 16px;
+    text-align: center;
+}
+.emotion-image > img {
+    max-width: 587px;
+    max-height: 325px;
+
+}
+.emotion-hash {
+  height: 24px;
+  font-family: AppleSDGothicNeo;
+  font-size: 20px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #3b3232;
+  margin-top: 63px;
+}
+
+.emotion-content {
+  width: 584px;
+  font-family: AppleSDGothicNeo;
+  font-size: 20px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #3b3232;
+  margin-top: 8px;
+}
 
 #backtotop {
     width: 40px;
