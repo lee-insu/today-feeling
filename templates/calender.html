@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="inner">
+            <div class="header-container">
+             <div class="header-logo"><a href=""><img src="../static/img/logo.png" alt="logo" class="logo"></a></div>
+             <nav class="header-list"> 
+                 <ul>
+                 <li><a href="">캘린더</a></li>
+                 <li><a href="/templates/login.html">로그인</a></li>
+                 <li><a href="/templates/register.html">회원가입</a></li>
+             </ul>
+             </nav>
+            </div>
+        </div>        
+     </header>
+     <section>
+         <div class="calender-container clearfix">
+            <div class="cdr-date">
+                <div class="cdr-day"></div>
+                <div class="cdr-date"></div>
+            </div>
+            <div class="calender-box">
+                <div class="cdr-box clearfix">
+                    <button title="prev" class="cdr-btn prev"></button>
+                    <span class="cdr-month"></span>
+                    <span class="cdr-year"></span>
+                    <button title="next" class="cdr-btn next"></button>
+                </div>
+            </div>
+            <table class="cdr-table">
+                <thead>
+                    <tr>
+                        <th>일</th>
+                        <th>월</th>
+                        <th>화</th>
+                        <th>수</th>
+                        <th>목</th>
+                        <th>금</th>
+                        <th>토</th>
+                    </tr>
+                </thead>
+                <tbody class="cdr-body"></tbody>
+            </table>
+         </div>
+     </section>
+</body>
+</html>
