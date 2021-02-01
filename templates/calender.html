@@ -10,10 +10,10 @@
     <header>
         <div class="inner">
             <div class="header-container">
-             <div class="header-logo"><a href=""><img src="../static/img/logo.png" alt="logo" class="logo"></a></div>
+             <div class="header-logo"><a href="/templates/index.html"><img src="../static/img/logo.png" alt="logo" class="logo"></a></div>
              <nav class="header-list"> 
                  <ul>
-                 <li><a href="">캘린더</a></li>
+                 <li><a href="/templates/calender.html">캘린더</a></li>
                  <li><a href="/templates/login.html">로그인</a></li>
                  <li><a href="/templates/register.html">회원가입</a></li>
              </ul>
@@ -22,19 +22,21 @@
         </div>        
      </header>
      <section>
-         <div class="calender-container clearfix">
+         <div class="user-inner">
+         <!-- 네모 박스 데이트  -->
+         <div class="calender-container">
             <div class="cdr-date">
                 <div class="cdr-day"></div>
                 <div class="cdr-date"></div>
             </div>
+            <!-- 달력  -->
             <div class="calender-box">
-                <div class="cdr-box clearfix">
-                    <button title="prev" class="cdr-btn prev"></button>
+                <div class="cdr-box">
+                    <button title="prev" class="cdr-btn prev"><</button>
                     <span class="cdr-month"></span>
                     <span class="cdr-year"></span>
-                    <button title="next" class="cdr-btn next"></button>
+                    <button title="next" class="cdr-btn next">></button>
                 </div>
-            </div>
             <table class="cdr-table">
                 <thead>
                     <tr>
@@ -49,7 +51,9 @@
                 </thead>
                 <tbody class="cdr-body"></tbody>
             </table>
+          </div>
          </div>
+        </div>
      </section>
 </body>
 </html>
