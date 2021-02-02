@@ -32,8 +32,8 @@ const init = {
  };
 
  const calBody = document.querySelector('.cdr-body'),
-       calPrev = document.querySelector('.cdr-btn.prev'),
-       calNext = document.querySelector('.cdr-btn.next');
+       btnPrev = document.querySelector('.cdr-btn.prev'),
+       btnNext = document.querySelector('.cdr-btn.next');
 
 
 function loadDate(date, dayIn) {
@@ -53,11 +53,87 @@ function loadYM(fullDate) {
         lastDay = init.getLastDay(yy,mm),
         markToday;
 
-    if (mm === init.monForChange && yy === init.today.getFullYear()) {
+    if (mm === init.today.getMonth() && yy === init.today.getFullYear()) {
         markToday = init.today.getDate();
     }
 
     document.querySelector('.cdr-month').textContent = init.monList[mm];
     document.querySelector('.cdr-year').textContent = yy;
+
+    let trtd ='';
+    let startCount;
+    let countDay= 0;
     
+    for(let i = 0; i < 6; i++) {
+        trtd += '<tr>';
+        for(let j = 0; j < 7; j ++) {
+            if (i === 0 && !startCount && j === firstDay.getDay()) {
+                startCount = 1;
+            }
+
+            if (!startCount) {
+                trtd += '<td></td>'
+            }else {
+                let fullDate = yy + '.' + init.addZero(mm + 1) + '.' + init.addZero(countDay + 1);
+                trtd += '<td class="day';
+                trtd += (markToday && markToday === countDay + 1) ? 'today"' : '"';
+                trtd += `data-date="${countDay + 1}" data-fdate"${fullDate}>`;
+            }
+
+            trtd += (startCount) ? ++countDay : '';
+
+            if (countDay === lastDay.getDate()) {
+                startCount = 0;
+            }
+
+            trtd += '</td>';
+        }
+        trtd += '</tr>';
+    }
+    calBody.innerHTML = trtd;
 }
+
+/**
+ * @param {string} val
+ */
+
+ function createNewList (val) {
+     let id = new Date().getTime() + '',
+         yy = init.activeDate.getFullYear(),
+         mm = init.activeDate.getMonth() + 1,
+         dd = init.activeDate.getDate();
+         const starget = calBody.querySelector(`day[data-date="${dd}"]`);
+
+         let date = yy + '.' + init.addZero(mm) + '.' + init.addZero(dd);
+
+         let eventData = {};
+         evenData['date'] = date;
+         evenData['memo'] = val;
+         evenData['complete'] = false;
+         evemData['id'] = id;
+         init.event.push(evenData);
+         let todoList= '';
+         todoList.appendChild(createLi(id, val, date));
+ }
+
+ btnPrev.addEventListener('click', () => loadYM(init.prevMonth()));
+ btnNext.addEventListener('click', () => loadYM(init.nextMonth()));
+
+ calBody.addEventListener('click', (e) => {
+     if (e.target.classList.contains('day')) {
+         if(init.activeDTag) {
+             init.activeDTag.classList.remove('day-active');
+         }
+         let day = Number(e.target.textContent);
+      loadDate(day, e.target.cellIndex);
+      e.target.classList.add('day-active');
+      init.activeDTag = e.target;
+      init.activeDate.setDate(day);
+      reloadTodo();
+     }
+ });
+
+
+
+
+ 
