@@ -21,24 +21,25 @@ const init = {
         return day;
     },
     addZero: (num) => (num < 10) ? '0' + num : num,
-    activeDtag: null,
-    getIndex: function(node) {
-        let index = 0;
-        while (node = node.previousElementSibling) {
-            index++;
-        }
-        return index;
-    }
+    activeDTag: null,
+    
  };
 
  const calBody = document.querySelector('.cdr-body'),
        btnPrev = document.querySelector('.cdr-btn.prev'),
        btnNext = document.querySelector('.cdr-btn.next');
 
+/**
+ * 
+ * @param {number} date 
+ * @param {number} dayIn 
+ */
 
-function loadDate(date, dayIn) {
+function loadDate(date,dayIn) {
     document.querySelector('.cdr-date').textContent = date;
     document.querySelector('.cdr-day').textContent = init.dayList[dayIn];
+    
+    
 }
 
 /**
@@ -72,7 +73,7 @@ function loadYM(fullDate) {
             }
 
             if (!startCount) {
-                trtd += '<td></td>'
+                trtd += '<td>'
             }else {
                 let fullDate = yy + '.' + init.addZero(mm + 1) + '.' + init.addZero(countDay + 1);
                 trtd += '<td class="day';
@@ -129,7 +130,6 @@ function loadYM(fullDate) {
       e.target.classList.add('day-active');
       init.activeDTag = e.target;
       init.activeDate.setDate(day);
-      reloadTodo();
      }
  });
 
