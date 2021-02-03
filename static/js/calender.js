@@ -2,9 +2,19 @@ const init = {
     monList:['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
     dayList: ['일','월','화','수','목','금','토'],
     today: new Date(),
+    activeDate: new Date(),
+    monChange: new Date().getMonth(),
     getFirstDay: (yy,mm) => new Date(yy, mm, 1),
     getLastDay: (yy, mm) => new Date (yy,mm + 1, 0),
-    zeroMonth: (num) => (num < 10) ? '0'+ num : num
+    zeroMonth: (num) => (num < 10) ? '0'+ num : num,
+    prevMonth: function() {
+        let back = new Date();
+        back.setDate(1);
+        back.setMonth(--this.monChange);
+        this.activeDate = back;
+        return back
+
+    }
 };
 
 const cdrBody = document.querySelector('.cdr-body'),
@@ -15,22 +25,23 @@ const cdrBody = document.querySelector('.cdr-body'),
 /**
  * 
  * @param {number} date 
- * @param {number} day 
+ * @p`a`ram {number} day 
  */
 
 
-let loadDate = (date,day) => {
-    document.querySelector('cdr-date').textContent = date;
-    document.querySelector('cdr-day').textContent = init.dayList[day];
+let loadDate = (date, day) => {
+    document.querySelector('.cdr-date').textContent = date;
+    document.querySelector('.cdr-day').textContent = init.dayList[day];
 }
 
 
 let loadYM = (fullDate) => {
-    let yy = init.today.getFullYear(),
-        mm = init.today.getMonth(),
+    let yy = fullDate.getFullYear(),
+        mm = fullDate.getMonth(),
         firstDay = init.getFirstDay(yy, mm),
         lastDay = init.getLastDay(yy, mm),
         clickToday = '';
+        
 
     if (mm === init.today.getMonth() && yy == init.today.getFullYear()) {
         clickToday = init.today.getDate();
@@ -41,7 +52,7 @@ let loadYM = (fullDate) => {
 
     let trtd ='',
         startCount,
-        countDay=0;
+        countDay = 0;
     
     for (let i = 0; i < 6; i++) {
         trtd += '<tr>';
@@ -52,7 +63,7 @@ let loadYM = (fullDate) => {
             if (!startCount) {
                 trtd += '<td>'
             }else {
-                let fullDate = yy + '.' + init.zeroMonth(mm + 1) + init.zeroMonth(countDay + 1);
+                let fullDate = yy + '.' + init.zeroMonth(mm +1) + init.zeroMonth(countDay + 1);
                 trtd += '<td class="day';
                 trtd += (clickToday && clickToday === countDay + 1) ? ' today" ' : '"';
                 trtd += ` data-date="${countDay + 1}" data-fdate="${fullDate}">`;
@@ -70,3 +81,23 @@ let loadYM = (fullDate) => {
 
   loadYM(init.today);
   loadDate(init.today.getDate(), init.today.getDay());
+
+  let createNewList = (val) => {
+      let id = new Date().getTime() +'',
+          yy = init.activeDate.getFullYear(),
+          mm = init.activeDate.getMonth() + 1,
+          dd = init.activeDate.getDate();
+          date = yy + '.'+init.zeroMonth(mm) + '.' + init.zeroMonth(dd); 
+
+    const target = cdrBody.querySelector(`.day[data-date="${dd}"]`);
+   
+//even data remove
+   }
+
+   btnPrev.addEventListener('click',() =>loadYM(init.prevMonth())); 
+ 
+  
+
+
+
+
