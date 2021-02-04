@@ -4,6 +4,7 @@ const init = {
     today: new Date(),
     activeDate: new Date(),
     monChange: new Date().getMonth(),
+    activeDay: null,
     getFirstDay: (yy,mm) => new Date(yy, mm, 1),
     getLastDay: (yy, mm) => new Date (yy,mm + 1, 0),
     zeroMonth: (num) => (num < 10) ? '0'+ num : num,
@@ -12,8 +13,14 @@ const init = {
         back.setDate(1);
         back.setMonth(--this.monChange);
         this.activeDate = back;
-        return back
-
+        return back;
+    },
+    nextMonth: function() {
+        let back = new Date();
+        back.setDate(1);
+        back.setMonth(++this.monChange);
+        this.activeDate = back;
+        return back;
     }
 };
 
@@ -82,6 +89,10 @@ let loadYM = (fullDate) => {
   loadYM(init.today);
   loadDate(init.today.getDate(), init.today.getDay());
 
+  btnPrev.addEventListener('click',() =>loadYM(init.prevMonth())); 
+  btnNext.addEventListener('click', () =>loadYM(init.nextMonth()));
+
+
   let createNewList = (val) => {
       let id = new Date().getTime() +'',
           yy = init.activeDate.getFullYear(),
@@ -90,12 +101,25 @@ let loadYM = (fullDate) => {
           date = yy + '.'+init.zeroMonth(mm) + '.' + init.zeroMonth(dd); 
 
     const target = cdrBody.querySelector(`.day[data-date="${dd}"]`);
-   
 //even data remove
    }
 
-   btnPrev.addEventListener('click',() =>loadYM(init.prevMonth())); 
+cdrBody.addEventListener('click', (e) => {
+    if (e.target.classList.contains('day')) {
+        if (init.activeDay) {
+            init.activeDay.classList.remove('day-active');
+        }
+        let day = Number(e.target.textContent);
+        loadDate(day,e.target.cellIndex);
+        e.target.classList.add('day-active');
+        init.activeDay = e.target;
+        init.activeDate.setDate(day);
+    }
+} )
+
  
+
+
   
 
 
