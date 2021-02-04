@@ -93,17 +93,6 @@ let loadYM = (fullDate) => {
   btnNext.addEventListener('click', () =>loadYM(init.nextMonth()));
 
 
-  let createNewList = (val) => {
-      let id = new Date().getTime() +'',
-          yy = init.activeDate.getFullYear(),
-          mm = init.activeDate.getMonth() + 1,
-          dd = init.activeDate.getDate();
-          date = yy + '.'+init.zeroMonth(mm) + '.' + init.zeroMonth(dd); 
-
-    const target = cdrBody.querySelector(`.day[data-date="${dd}"]`);
-//even data remove
-   }
-
 cdrBody.addEventListener('click', (e) => {
     if (e.target.classList.contains('day')) {
         if (init.activeDay) {
