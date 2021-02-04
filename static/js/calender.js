@@ -7,7 +7,7 @@ const init = {
     activeDay: null,
     getFirstDay: (yy,mm) => new Date(yy, mm, 1),
     getLastDay: (yy, mm) => new Date (yy,mm + 1, 0),
-    zeroMonth: (num) => (num < 10) ? '0'+ num : num,
+    addZero: (num) => (num < 10) ? '0'+ num : num,
     prevMonth: function() {
         let back = new Date();
         back.setDate(1);
@@ -23,6 +23,10 @@ const init = {
         return back;
     }
 };
+
+const toDoLi = {
+
+}
 
 const cdrBody = document.querySelector('.cdr-body'),
       btnPrev = document.querySelector('.cdr-btn.prev'),
@@ -70,7 +74,7 @@ let loadYM = (fullDate) => {
             if (!startCount) {
                 trtd += '<td>'
             }else {
-                let fullDate = yy + '.' + init.zeroMonth(mm +1) + init.zeroMonth(countDay + 1);
+                let fullDate = yy + '.' + init.addZero(mm +1) + init.addZero(countDay + 1);
                 trtd += '<td class="day';
                 trtd += (clickToday && clickToday === countDay + 1) ? ' today" ' : '"';
                 trtd += ` data-date="${countDay + 1}" data-fdate="${fullDate}">`;
@@ -91,26 +95,27 @@ let loadYM = (fullDate) => {
 
   btnPrev.addEventListener('click',() =>loadYM(init.prevMonth())); 
   btnNext.addEventListener('click', () =>loadYM(init.nextMonth()));
+  cdrBody.addEventListener('click',clickDay);
 
 
-cdrBody.addEventListener('click', (e) => {
-    if (e.target.classList.contains('day')) {
+function clickDay (e) {
+    let clickToday = e.target;
+    if (clickToday.classList.contains('day')) {
         if (init.activeDay) {
             init.activeDay.classList.remove('day-active');
         }
-        let day = Number(e.target.textContent);
-        loadDate(day,e.target.cellIndex);
-        e.target.classList.add('day-active');
-        init.activeDay = e.target;
+        let day = Number(clickToday.textContent);
+        loadDate(day,clickToday.cellIndex);
+        clickToday.classList.add('day-active');
+        init.activeDay = clickToday;
         init.activeDate.setDate(day);
+
+
+
+        
+    
     }
-} )
-
- 
-
-
-  
-
+}
 
 
 
