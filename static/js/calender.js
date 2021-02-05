@@ -5,6 +5,7 @@ const init = {
     activeDate: new Date(),
     monChange: new Date().getMonth(),
     activeDay: null,
+    selectDay: null,
     getFirstDay: (yy,mm) => new Date(yy, mm, 1),
     getLastDay: (yy, mm) => new Date (yy,mm + 1, 0),
     addZero: (num) => (num < 10) ? '0'+ num : num,
@@ -107,14 +108,15 @@ function clickDay (e) {
         clickToday.classList.add('day-active');
         init.activeDay = clickToday;
         init.activeDate.setDate(day);
-        console.log(document.querySelector('.day-active').fullDate)
+        init.selectDay = document.querySelector('.day-active').getAttribute('data-fdate')
+
         }
 }
 
 
 
 function reShowing() {
-    keyValue = init.activeDay;
+    keyValue = init.selectDay;
     if (feelList[keyValue] === undefined) {
         inputList.textContent = '';
         feelList[keyValue] = [];
@@ -162,7 +164,7 @@ function reShowing() {
             div.addEventListener('click',checkList);
             btn.addEventListener('click',delectFeel);
             inputBox.value = '';
-            function delectFeel() {
+            function deleteFeel() {
                 div.remove();
                 btn.remove();
             }
@@ -174,6 +176,36 @@ let inputBox = document.querySelector('#input-box'),
     inputList = document.querySelector('#input-list'),
     delText = 'x';
 
+inputDate.addEventListener('click',addFeelList);
+
+let feelList = [],
+    dataCnt = 1,
+    keyValue = init.selectDay;
+feelList[keyValue] = [];
+function addFeelList() {
+    let div = document.createElement('div');
+    div.textContent = '-' + inputBox.value;
+    let btn = document.createElement('button');
+    btn.setAttribute('id','del-data');
+    btn.setAttribute('id',dataCnt + keyValue);
+    btn.setAttribute('class','del-data');
+    btn.textContent = delText;
+    inputList.appendChild(div);
+    inputList.appendChild(btn);
+    feelList[keyValue].push(inputBox.value);
+    dataCnt++;
+    inputBox.value ='';
+    div.addEventListener('click',checkList);
+    btn.addEventListener('click',deleteFeel);
+    function deleteFeel() {
+        div.remove();
+        btn.remove();
+    }
+}
+console.log(keyValue);
+function checkList(e) {
+    e.currentTarget.classList.add('checked');
+}
 
   
 
