@@ -107,7 +107,7 @@ function clickDay (e) {
         clickToday.classList.add('day-active');
         init.activeDay = clickToday;
         init.activeDate.setDate(day);
-        console.log(document.querySelector('.day-active').datalist)
+        console.log(document.querySelector('.day-active').fullDate)
         }
 }
 
