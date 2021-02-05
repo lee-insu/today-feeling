@@ -7,7 +7,7 @@ const init = {
     activeDay: null,
     getFirstDay: (yy,mm) => new Date(yy, mm, 1),
     getLastDay: (yy, mm) => new Date (yy,mm + 1, 0),
-    zeroMonth: (num) => (num < 10) ? '0'+ num : num,
+    addZero: (num) => (num < 10) ? '0'+ num : num,
     prevMonth: function() {
         let back = new Date();
         back.setDate(1);
@@ -24,6 +24,8 @@ const init = {
     }
 };
 
+
+
 const cdrBody = document.querySelector('.cdr-body'),
       btnPrev = document.querySelector('.cdr-btn.prev'),
       btnNext = document.querySelector('.cdr-btn.next');
@@ -32,7 +34,7 @@ const cdrBody = document.querySelector('.cdr-body'),
 /**
  * 
  * @param {number} date 
- * @p`a`ram {number} day 
+ * @param {number} day 
  */
 
 
@@ -70,7 +72,7 @@ let loadYM = (fullDate) => {
             if (!startCount) {
                 trtd += '<td>'
             }else {
-                let fullDate = yy + '.' + init.zeroMonth(mm +1) + init.zeroMonth(countDay + 1);
+                let fullDate = yy + '.' + init.addZero(mm +1) + init.addZero(countDay + 1);
                 trtd += '<td class="day';
                 trtd += (clickToday && clickToday === countDay + 1) ? ' today" ' : '"';
                 trtd += ` data-date="${countDay + 1}" data-fdate="${fullDate}">`;
@@ -91,22 +93,86 @@ let loadYM = (fullDate) => {
 
   btnPrev.addEventListener('click',() =>loadYM(init.prevMonth())); 
   btnNext.addEventListener('click', () =>loadYM(init.nextMonth()));
+  cdrBody.addEventListener('click',clickDay);
 
 
-cdrBody.addEventListener('click', (e) => {
-    if (e.target.classList.contains('day')) {
+function clickDay (e) {
+    let clickToday = e.target;
+    if (clickToday.classList.contains('day')) {
         if (init.activeDay) {
             init.activeDay.classList.remove('day-active');
         }
-        let day = Number(e.target.textContent);
-        loadDate(day,e.target.cellIndex);
-        e.target.classList.add('day-active');
-        init.activeDay = e.target;
+        let day = Number(clickToday.textContent);
+        loadDate(day,clickToday.cellIndex);
+        clickToday.classList.add('day-active');
+        init.activeDay = clickToday;
         init.activeDate.setDate(day);
-    }
-} )
+        console.log(document.querySelector('.day-active').fullDate)
+        }
+}
 
- 
+
+
+function reShowing() {
+    keyValue = init.activeDay;
+    if (feelList[keyValue] === undefined) {
+        inputList.textContent = '';
+        feelList[keyValue] = [];
+        
+        const divs = document.querySelectorAll('#input-list > div');
+        divs.forEach(function(e) {
+            e.remove();
+        });
+
+        const btns = document.querySelectorAll('#input-list > button');
+        btns.forEach(function(e1) {
+            e1.remove();
+         }); 
+    }else if (feelList[keyValue].length === 0) {
+        inputList.textContent = "";
+
+        const divs = document.querySelectorAll('#input-list > div');
+        divs.forEach(function(e) { 
+            e.remove();
+        });
+        const btns = document.querySelectorAll('#input-list > div');
+        btns.forEach(function(e1) {
+            e1.remove();
+        });
+    }else{
+        const divs = document.querySelectorAll('#input-list > div');
+        divs.forEach(function(e) { 
+            e.remove();
+        });
+        const btns = document.querySelectorAll('#input-list > div');
+        btns.forEach(function(e1) {
+            e1.remove();
+        });
+        let div = document.createElement('div');
+        for(let k = 0; k < feelList[keyValue].length; i++) {
+            let div = document.createElement('div');
+            div.textContent = '_' + feelList[keyValue][i];
+            let btn = document.createElement('button');
+            btn.setAttribute('id', 'del-data');
+            btn.setAttribute('id',dataCnt + keyValue);
+            btn.setAttribute('class', 'del-data');
+            btn.textContent = delText;
+            inputList.appendChild(div);
+            inputList.appendChild(btn);
+            div.addEventListener('click',checkList);
+            btn.addEventListener('click',delectFeel);
+            inputBox.value = '';
+            function delectFeel() {
+                div.remove();
+                btn.remove();
+            }
+        }
+    }
+}  
+let inputBox = document.querySelector('#input-box'),
+    inputDate = document.querySelector('#input-data'),
+    inputList = document.querySelector('#input-list'),
+    delText = 'x';
 
 
   
