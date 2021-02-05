@@ -36,7 +36,7 @@ const cdrBody = document.querySelector('.cdr-body'),
 /**
  * 
  * @param {number} date 
- * @p`a`ram {number} day 
+ * @param {number} day 
  */
 
 
@@ -109,13 +109,66 @@ function clickDay (e) {
         clickToday.classList.add('day-active');
         init.activeDay = clickToday;
         init.activeDate.setDate(day);
-
-
-
-        
-    
-    }
+        keyValue = init.today.getFullYear() + '' + init.today.getMonth() + '' + init.today.getDate();
+        console.log(keyValue);
+        }
 }
 
+function reShowing() {
+    keyValue = init.today.getFullYear() + '' + init.today.getMonth() + '' + init.today.getDate();
+    if (feelList[keyValue] === undefined) {
+        inputList.textContent = '';
+        feelList[keyValue] = [];
+        
+        const divs = document.querySelectorAll('#input-list > div');
+        divs.forEach(function(e) {
+            e.remove();
+        });
+
+        const btns = document.querySelectorAll('#input-list > button');
+        btns.forEach(function(e1) {
+            e1.remove();
+         }); 
+    }else if (feelList[keyValue].length === 0) {
+        inputList.textContent = "";
+
+        const divs = document.querySelectorAll('#input-list > div');
+        divs.forEach(function(e) { 
+            e.remove();
+        });
+        const btns = document.querySelectorAll('#input-list > div');
+        btns.forEach(function(e1) {
+            e1.remove();
+        });
+    }else{
+        const divs = document.querySelectorAll('#input-list > div');
+        divs.forEach(function(e) { 
+            e.remove();
+        });
+        const btns = document.querySelectorAll('#input-list > div');
+        btns.forEach(function(e1) {
+            e1.remove();
+        });
+        let div = document.createElement('div');
+        for(let k = 0; k < feelList[keyValue].length; i++) {
+            let div = document.createElement('div');
+            div.textContent = '_' + feelList[keyValue][i];
+            let btn = document.createElement('button');
+            btn.setAttribute('id', 'del-data');
+            btn.setAttribute('id',dataCnt + keyValue);
+            btn.setAttribute('class', 'del-data');
+            btn.textContent = delText;
+            inputList.appendChild(div);
+            inputList.appendChild(btn);
+            div.addEventListener('click',checkList);
+            btn.addEventListener('click',delectFeel);
+            inputBox.value = '';
+            function delectFeel() {
+                div.remove();
+                btn.remove();
+            }
+        }
+    }
+}  
 
 
