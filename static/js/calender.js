@@ -24,9 +24,7 @@ const init = {
     }
 };
 
-const toDoLi = {
 
-}
 
 const cdrBody = document.querySelector('.cdr-body'),
       btnPrev = document.querySelector('.cdr-btn.prev'),
@@ -109,13 +107,14 @@ function clickDay (e) {
         clickToday.classList.add('day-active');
         init.activeDay = clickToday;
         init.activeDate.setDate(day);
-        keyValue = init.today.getFullYear() + '' + init.today.getMonth() + '' + init.today.getDate();
-        console.log(keyValue);
+        console.log(document.querySelector('.day-active').datalist)
         }
 }
 
+
+
 function reShowing() {
-    keyValue = init.today.getFullYear() + '' + init.today.getMonth() + '' + init.today.getDate();
+    keyValue = init.activeDay;
     if (feelList[keyValue] === undefined) {
         inputList.textContent = '';
         feelList[keyValue] = [];
@@ -170,5 +169,8 @@ function reShowing() {
         }
     }
 }  
-
+let inputBox = document.querySelector('#input-box'),
+    inputDate = document.querySelector('#input-data'),
+    inputList = document.querySelector('#input-list'),
+    delText = 'x';
 
