@@ -67,11 +67,12 @@ const init = {
         for(let k = 0; k < feelList[keyValue].length; k++) {
             let div = document.createElement('div');
             div.textContent = feelList[keyValue][k];
+            div.setAttribute('class','feel-li');
             let btn = document.createElement('button');
             btn.setAttribute('id', 'del-data');
-            btn.setAttribute('id',dataCnt + keyValue);
+            btn.setAttribute('id',keyValue);
             btn.setAttribute('class', 'del-data');
-            btn.textContent = delText;
+            btn.textContent = 'x';
             inputList.appendChild(div);
             inputList.appendChild(btn);
             div.addEventListener('click',checkList);
@@ -80,12 +81,16 @@ const init = {
             function deleteFeel() {
                 div.remove();
                 btn.remove();
+                
             }
-            if (btn !== div) {
-                btn === div;
-            }
-        };
+            if (btn < div) {
+                let inputLi = document.querySelector('.input-list');
+                inputLi.children[0].remove();
+    
+                }
+        }
     }
+
 };
 
 
@@ -114,6 +119,7 @@ let loadYM = (fullDate) => {
         firstDay = init.getFirstDay(yy, mm),
         lastDay = init.getLastDay(yy, mm),
         clickToday = '';
+        
         
 
     if (mm === init.today.getMonth() && yy == init.today.getFullYear()) {
@@ -150,9 +156,10 @@ let loadYM = (fullDate) => {
         trtd += '</tr>';
     }
     cdrBody.innerHTML = trtd;
+    init.selectDay = yy + init.addZero(mm +1) + '0' + init.today.getDate();
     
 }
-
+  
   loadYM(init.today);
   loadDate(init.today.getDate(), init.today.getDay());
 
@@ -184,8 +191,8 @@ function clickDay (e) {
 
 let inputBox = document.querySelector('#input-box'),
     inputDate = document.querySelector('#input-data'),
-    inputList = document.querySelector('#input-list'),
-    delText = 'x';
+    inputList = document.querySelector('#input-list');
+    
 
 inputDate.addEventListener('click',addFeelList);
 
@@ -196,11 +203,12 @@ feelList[init.selectDay] = [];
 function addFeelList() {
     let div = document.createElement('div');
     div.textContent = inputBox.value;
+    div.setAttribute('class','feel-li');
     let btn = document.createElement('button');
     btn.setAttribute('id','del-data');
-    btn.setAttribute('id',dataCnt + init.selectDay);
+    btn.setAttribute('id',init.selectDay);
     btn.setAttribute('class','del-data');
-    btn.textContent = delText;
+    btn.textContent = 'x';
     inputList.appendChild(div);
     inputList.appendChild(btn);
     feelList[keyValue].push(inputBox.value);
@@ -212,6 +220,7 @@ function addFeelList() {
         div.remove();
         btn.remove();
     }
+    
 }
 console.log(init.selectDay);
 function checkList(e) {
