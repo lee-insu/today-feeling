@@ -83,12 +83,25 @@ const init = {
                 btn.remove();
                 
             }
+        }
+        let divs = document.querySelector('.feel-li'),
+            btns = document.querySelector('del-data');
+        if (btns < divs) {
+            let inputLi = document.querySelector('.input-list');
+            inputLi.children[0].remove();
+            console.log('a')
+        } 
+
+    },
+    overLap: function() {
+        let div = document.querySelector('.feel-li'),
+            btn = document.querySelector('del-data');
+
             if (btn < div) {
                 let inputLi = document.querySelector('.input-list');
                 inputLi.children[0].remove();
-    
-                }
-        }
+                console.log('b')
+            } 
     }
 
 };
@@ -170,6 +183,7 @@ let loadYM = (fullDate) => {
 
 function clickDay (e) {
     let clickToday = e.target;
+    init.overLap();
     if (clickToday.classList.contains('day')) {
         if (init.activeDay) {
             init.activeDay.classList.remove('day-active');
@@ -182,6 +196,7 @@ function clickDay (e) {
         init.selectDay = document.querySelector('.day-active').getAttribute('data-fdate')
         init.reShowing();
         init.addFeelLi();
+        init.overLap();
         
         }
 }
@@ -199,7 +214,9 @@ inputDate.addEventListener('click',addFeelList);
 let feelList = [],
     dataCnt = 1,
     keyValue = init.selectDay;
-feelList[init.selectDay] = [];
+    feelList[init.selectDay] = [];
+
+
 function addFeelList() {
     let div = document.createElement('div');
     div.textContent = inputBox.value;
@@ -220,7 +237,7 @@ function addFeelList() {
         div.remove();
         btn.remove();
     }
-    
+
 }
 console.log(init.selectDay);
 function checkList(e) {
