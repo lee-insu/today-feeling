@@ -4,11 +4,13 @@ const init = {
     today: new Date(),
     activeDate: new Date(),
     monChange: new Date().getMonth(),
+    getToday: new Date().getDate(),
     activeDay: null,
     selectDay: null,
     getFirstDay: (yy,mm) => new Date(yy, mm, 1),
     getLastDay: (yy, mm) => new Date (yy,mm + 1, 0),
     addZero: (num) => (num < 10) ? '0'+ num : num,
+    zeroDate: (getToday) => (getToday < 10) ? '0':'',
     prevMonth: function() {
         let back = new Date();
         back.setDate(1);
@@ -100,7 +102,7 @@ const init = {
             if (btn < div) {
                 let inputLi = document.querySelector('.input-list');
                 inputLi.children[0].remove();
-                console.log('b')
+                
             } 
     }
 
@@ -169,7 +171,7 @@ let loadYM = (fullDate) => {
         trtd += '</tr>';
     }
     cdrBody.innerHTML = trtd;
-    init.selectDay = yy + init.addZero(mm +1) + '0' + init.today.getDate();
+    init.selectDay = yy + init.addZero(mm +1) + init.zeroDate() + init.today.getDate();
     
 }
   
@@ -197,6 +199,12 @@ function clickDay (e) {
         init.reShowing();
         init.addFeelLi();
         init.overLap();
+       let btn = document.querySelector('.del-data');
+       let inputList = document.querySelector('.input-list');
+       if(inputList.children[0] = btn) {
+           inputList.children[0].remove();
+       }
+        console.log('c');
         
         }
 }
@@ -211,6 +219,8 @@ let inputBox = document.querySelector('#input-box'),
 
 inputDate.addEventListener('click',addFeelList);
 
+
+
 let feelList = [],
     dataCnt = 1,
     keyValue = init.selectDay;
@@ -220,6 +230,11 @@ let feelList = [],
 function addFeelList() {
     let div = document.createElement('div');
     div.textContent = inputBox.value;
+
+    if(div.textContent === "") {
+        alert('빈칸');
+    } else {
+
     div.setAttribute('class','feel-li');
     let btn = document.createElement('button');
     btn.setAttribute('id','del-data');
@@ -227,17 +242,19 @@ function addFeelList() {
     btn.setAttribute('class','del-data');
     btn.textContent = 'x';
     inputList.appendChild(div);
+    console.log('r');
     inputList.appendChild(btn);
     feelList[keyValue].push(inputBox.value);
     dataCnt++;
     inputBox.value ='';
     div.addEventListener('click',checkList);
     btn.addEventListener('click',deleteFeel);
+    }
     function deleteFeel() {
         div.remove();
         btn.remove();
     }
-
+    
 }
 console.log(init.selectDay);
 function checkList(e) {
