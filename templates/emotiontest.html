@@ -58,11 +58,100 @@
             // predict can take in an image, video or canvas html element
             let image = document.querySelector("#face-image")
             const prediction = await model.predict(image, false);
-            for (let i = 0; i < maxPredictions; i++) {
-                const classPrediction =
-                    prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-                labelContainer.childNodes[i].innerHTML = classPrediction;
+            console.log(prediction);
+            prediction.sort((a,b) => parseFloat(b.probability) - parseFloat(a.probability));
+            console.log(prediction[0].className);
+            let resultTitle, resultExplain, resultCause,resultSol;
+
+        switch(prediction[0].className) {
+            case "happy" :
+            resultTitle = "happy"
+            resultExplain = "explain"
+            resultCause = "cause"
+            resultSol = "sol"
+            break;
+
+            case "uneasy" :
+            resultTitle = "uneasy"
+            resultExplain = "explain"
+            resultCause = "cause"
+            resultSol = "sol"
+            break;
+
+            case "angry" :
+            resultTitle = "angry"
+            resultExplain = "explain"
+            resultCause = "cause"
+            resultSol = "sol"
+            break;
+
+            case "sad" :
+            resultTitle = "sad"
+            resultExplain = "explain"
+            resultCause = "cause"
+            resultSol = "sol"
+            break;
+
+            case "panic" :
+            resultTitle = "panic"
+            resultExplain = "explain"
+            resultCause = "cause"
+            resultSol = "sol"
+            break;
+
+            case "hurted" :
+            resultTitle = "hurted"
+            resultExplain = "explain"
+            resultCause = "cause"
+            resultSol = "sol"
+            break;
+        }
+        let title = `<div class= '${prediction[0].className}-feeling-title'> ${resultTitle}</div>`;
+        let explain = `<div class='${prediction[0].className}-explain'> ${resultExplain}</div>`;
+        let cause = `<div class ='${prediction[0].className}-cause'> ${resultCause}</dlv>`;
+        let sol = `<div class ='${prediction[0].className}-sol'> ${resultSol}</div>`;
+        let pushResult = document.querySelector('.push-result');
+        pushResult.innerHTML(title,explain,cause,sol);
+        let barWidth;
+        for (let i = 0; i < maxPredictions; i++) {
+            if(prediction[i].probability.toFixed(2) > 0.1) {
+                barWidth = Math.round(prediction[i].probability.toFixed(2) * 100 + "%")
+            } else if (prediction[i].probability.toFixed(2) >= 0.01) {
+                barWidth = "4%"
+            }else {
+                barWidth= "2%"
             }
+
+            let labelTitle;
+            switch (prediction[i].className) { 
+                case "happy":
+                labelTitle = "행복"
+                break;
+
+                case "uneasy":
+                labelTitle = "불행"
+                break;
+
+                case "angry":
+                labelTitle = "분노"
+                break;
+
+                case "sad":
+                labelTitle = "슬픔"
+                break;
+
+                case "panic":
+                labelTitle = "당황"
+                break;
+
+                case "hurted":
+                labelTitle = "상처"
+                break;
+            }
+            let label = `<div class ='feeling-label'> ${labelTitle} </div>`
+
+
+
         }
     </script>
     
