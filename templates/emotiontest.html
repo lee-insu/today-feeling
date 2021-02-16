@@ -9,8 +9,10 @@
     <div>Teachable Machine Image Model</div>
     <!-- <button type="button" onclick="init()">Start</button> -->
     <!-- <button type="button" onclick="predict()" >image check</button> -->
+    <div class="image-upload-file">
     <input  type="file" onchange = "readURL(this)" accept="image/png, image/jpeg"/>
     <img id="face-image"class="blah" src="#" alt="">
+    </div>
     <div id="loading">
         <span class="loading-message">지금 기분을 분석중입니다</span>
     </div>
@@ -19,17 +21,20 @@
     <div class="push-result"></div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <script>
+        $('#loading').hide();
         function readURL(input) {
             if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function (e) {
+                
             $('.blah').attr('src', e.target.result);
-            $('.loading').hide();
+            $('#loading').show();
+            console.log(input.files[0])
             };
             reader.readAsDataURL(input.files[0]);
             init().then(function() {
                 predict();
-                $('.loading').hide();
+                $('#loading').hide();
             });
             }
             }
