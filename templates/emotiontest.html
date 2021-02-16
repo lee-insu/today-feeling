@@ -135,7 +135,7 @@
         let barWidth;
         for (let i = 0; i < maxPredictions; i++) {
             if(prediction[i].probability.toFixed(2) > 0.1) {
-                barWidth = Math.round(prediction[i].probability.toFixed(2) * 100 + "%")
+                barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
             } else if (prediction[i].probability.toFixed(2) >= 0.01) {
                 barWidth = "4%"
             }else {
@@ -172,7 +172,7 @@
                 labelTitle = "dun"
                 break;
             }
-            
+            console.log(barWidth);
             let label = `<div class ='feeling-label'> ${labelTitle} </div>`
             let bar = `<div class ='bar-container><div class='${prediction[i].className}-box'></div><div class='align-center ${prediction[i].className}-bar' style='width:${barWidth}'><span class ='percent-text'>${Math.round(prediction[i].probability.toFixed(2) * 100)}%</span></div></div>`;
             labelContainer.childNodes[i].innerHTML = label + bar;
