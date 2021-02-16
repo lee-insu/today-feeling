@@ -7,10 +7,13 @@
 </head>
 <body>
     <div>Teachable Machine Image Model</div>
-    <button type="button" onclick="init()">Start</button>
-    <button type="button" onclick="predict()" >image check</button>
+    <!-- <button type="button" onclick="init()">Start</button> -->
+    <!-- <button type="button" onclick="predict()" >image check</button> -->
     <input  type="file" onchange = "readURL(this)" accept="image/png, image/jpeg"/>
     <img id="face-image"class="blah" src="#" alt="">
+    <div id="loading">
+        <span class="loading-message">지금 기분을 분석중입니다</span>
+    </div>
     <div id="webcam-container"></div>
     <div id="label-container"></div>
     <div class="push-result"></div>
@@ -21,8 +24,13 @@
             var reader = new FileReader();
             reader.onload = function (e) {
             $('.blah').attr('src', e.target.result);
-            }
+            $('.loading').hide();
+            };
             reader.readAsDataURL(input.files[0]);
+            init().then(function() {
+                predict();
+                $('.loading').hide();
+            });
             }
             }
     </script>
@@ -33,7 +41,7 @@
         // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
     
         // the link to your model provided by Teachable Machine export panel
-        const URL = "https://teachablemachine.withgoogle.com/models/-7usysJ4X/";
+        const URL = "https://teachablemachine.withgoogle.com/models/ajfH_-5E0/";
     
         let model, webcam, labelContainer, maxPredictions;
     
@@ -60,60 +68,65 @@
             let image = document.querySelector("#face-image")
             const prediction = await model.predict(image, false);
             prediction.sort((a,b) => parseFloat(b.probability) - parseFloat(a.probability));
-            console.log(prediction[0].className);
             let resultTitle, resultExplain, resultCause,resultSol;
 
         switch(prediction[0].className) {
-            case "happy" :
-            resultTitle = "happy"
+            case "기쁨" :
+            resultTitle = "기쁨"
             resultExplain = "explain"
             resultCause = "cause"
             resultSol = "sol"
             break;
 
-            case "uneasy" :
-            resultTitle = "uneasy"
+            case "까칠" :
+            resultTitle = "까칠"
             resultExplain = "explain"
             resultCause = "cause"
             resultSol = "sol"
             break;
 
-            case "angry" :
-            resultTitle = "angry"
+            case "놀람" :
+            resultTitle = "놀람"
             resultExplain = "explain"
             resultCause = "cause"
             resultSol = "sol"
             break;
 
-            case "sad" :
-            resultTitle = "sad"
+            case "분노" :
+            resultTitle = "분노"
             resultExplain = "explain"
             resultCause = "cause"
             resultSol = "sol"
             break;
 
-            case "panic" :
+            case "소심" :
             resultTitle = "panic"
             resultExplain = "explain"
             resultCause = "cause"
             resultSol = "sol"
             break;
 
-            case "hurted" :
-            resultTitle = "hurted"
+            case "슬픔" :
+            resultTitle = "슬픔"
             resultExplain = "explain"
             resultCause = "cause"
             resultSol = "sol"
             break;
+
+            default:
+             resultTitle = "un"
+             resultExplain = "un"
+             resultCause = "unf"
+             resultSol = "un"
+             break;
         }
-        
+        console.log(prediction)
         let title = `<div class= '${prediction[0].className}-feeling-title'> ${resultTitle}</div>`;
         let explain = `<div class='${prediction[0].className}-explain'> ${resultExplain}</div>`;
         let cause = `<div class ='${prediction[0].className}-cause'> ${resultCause}</dlv>`;
         let sol = `<div class ='${prediction[0].className}-sol'> ${resultSol}</div>`;
         let pushResult = document.querySelector('.push-result');
         $('.push-result').html(title + explain + cause + sol);
-        console.log(prediction[0].className, resultTitle)
         let barWidth;
         for (let i = 0; i < maxPredictions; i++) {
             if(prediction[i].probability.toFixed(2) > 0.1) {
@@ -126,34 +139,38 @@
 
             let labelTitle;
             switch (prediction[i].className) { 
-                case "happy":
-                labelTitle = "행복"
+                case "기쁨":
+                labelTitle = "기쁨"
                 break;
 
-                case "uneasy":
-                labelTitle = "불행"
+                case "까칠":
+                labelTitle = "까칠"
                 break;
 
-                case "angry":
+                case "놀람":
+                labelTitle = "놀람"
+                break;
+
+                case "분노":
                 labelTitle = "분노"
                 break;
 
-                case "sad":
+                case "소심":
+                labelTitle = "소심"
+                break;
+
+                case "슬픔":
                 labelTitle = "슬픔"
                 break;
 
-                case "panic":
-                labelTitle = "당황"
-                break;
-
-                case "hurted":
-                labelTitle = "상처"
+                default:
+                labelTitle = "dun"
                 break;
             }
             
             let label = `<div class ='feeling-label'> ${labelTitle} </div>`
             let bar = `<div class ='bar-container><div class='${prediction[i].className}-box'></div><div class='align-center ${prediction[i].className}-bar' style='width:${barWidth}'><span class ='percent-text'>${Math.round(prediction[i].probability.toFixed(2) * 100)}%</span></div></div>`;
-            labelContainer.childNodes[i].innerHTML = label;
+            labelContainer.childNodes[i].innerHTML = label + bar;
 
 
         }
