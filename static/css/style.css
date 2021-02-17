@@ -103,10 +103,11 @@ section {width: 100%;}
 
 .face-image {width: 100%;}
 
-.face-image > a > img {
-    width: auto;
-    height: 430px;
-    left:200px;
+.face-image {
+    width: 371px;
+    height: 400px;
+    top:80px;
+    left:400px;
     position: absolute;
 }
 
