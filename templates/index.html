@@ -31,29 +31,26 @@
     <section>
         <div class="inner">
             <div class="face-upload">
-                <!-- <input  type="file" onchange = "readURL(this)" accept="image/png, image/jpeg"/> -->
+                <div class="face-upload-wrap">
+                <input  id="input-image" type="file" onchange = "readURL(this)" accept="image/png, image/jpeg" >
                 <img class = "face-image" src="../static/img/hand.jpg" alt="image" >
+                <!-- onclick="document.querySelector('#input-image').click()" -->
+                </div>
                 <div class="face-text">오늘 하루 어땠나요? 표정으로 맞춰볼게요</div>
+                
             </div>
+            <div id="loading">
+                <img id="face-result-image"class="blah" src="#" alt="">
+                <span class="loading-message">지금 기분을 분석중입니다</span>
+            </div>
+            <div class="face-result">
+            <div id="label-container"></div>
+            <div class="push-result"></div>
+            </div>
+
         </div>
     </section>
-    <div class="inner">
-        <div class="face-result-container">
-            <div class="image-upload-file">
-                <input  class="input-image"type="file" onchange = "readURL(this)" accept="image/png, image/jpeg" ">
-                <img id="face-image"class="blah" src="#" alt="">
-                </div>
-                <div id="loading">
-                    <span class="loading-message">지금 기분을 분석중입니다</span>
-                </div>
-                <div id="webcam-container"></div>
-                <div id="label-container"></div>
-                <div class="push-result"></div>
-        </div>
-    </div>
-    <section>
-        
-    </section>
+
     <section>
         <div class="inner">
             <div class="content-container">
@@ -107,13 +104,14 @@
     <script src="../static/js/backtotop.js"></script>
     <script src="../static//js/nav.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
     <script>
         $('#loading').hide();
         function readURL(input) {
             if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function (e) {
-                
+            $('.face-upload').hide();
             $('.blah').attr('src', e.target.result);
             $('#loading').show();
             console.log(input.files[0])
