@@ -93,7 +93,7 @@ section {width: 100%;}
 .face-upload {
     margin-top: 2px;
     width: 100%;
-    height: 446px;
+    height: 600px;
     position: relative;
 }
 .face-image{transition: 0.2s;}
@@ -124,6 +124,12 @@ section {width: 100%;}
     left:392px;
 
 }   
+
+.face-result-container {
+    background-color: #707070;
+    width: 100%;
+    height: 500px;
+}
 
 .content-container {width: 100%; margin-top: 30px;}
 

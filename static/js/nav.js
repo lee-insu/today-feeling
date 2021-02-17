@@ -32,14 +32,15 @@ const setNavTransition = (width) => {
     }
 };
 
-const handleResize = () => {
+const handleResize = (e) => {
     const width = e.target.innerWidth;
+    console.log(width);
     setNavTransition(width);
 };
 
-const init = () => {
+const resize = () => {
     window.addEventListener("resize",handleResize);
     navSlide();
 };
 
-init();
+resize();

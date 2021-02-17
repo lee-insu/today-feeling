@@ -1,52 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div>Teachable Machine Image Model</div>
-    <!-- <button type="button" onclick="init()">Start</button> -->
-    <!-- <button type="button" onclick="predict()" >image check</button> -->
-    <div class="image-upload-file">
-    <input  type="file" onchange = "readURL(this)" accept="image/png, image/jpeg"/>
-    <img id="face-image"class="blah" src="#" alt="">
-    </div>
-    <div id="loading">
-        <span class="loading-message">지금 기분을 분석중입니다</span>
-    </div>
-    <div id="webcam-container"></div>
-    <div id="label-container"></div>
-    <div class="push-result"></div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
-    <script>
-        $('#loading').hide();
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                
-            $('.blah').attr('src', e.target.result);
-            $('#loading').show();
-            console.log(input.files[0])
-            };
-            reader.readAsDataURL(input.files[0]);
-            init().then(function() {
-                predict();  
-                $('#loading').hide();
-            });
-            }
-            }
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
-    <script type="text/javascript">
-        // More API functions here:
-        // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
-    
-        // the link to your model provided by Teachable Machine export panel
-        const URL = "https://teachablemachine.withgoogle.com/models/ajfH_-5E0/";
+const URL = "https://teachablemachine.withgoogle.com/models/ajfH_-5E0/";
     
         let model, webcam, labelContainer, maxPredictions;
     
@@ -181,7 +133,3 @@
         }
 
     }
-    </script>
-    
-</body>
-</html>
