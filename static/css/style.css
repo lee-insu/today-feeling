@@ -464,6 +464,178 @@ input {
     border: none;
 }
 
+.push-result {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.push-result > :nth-child(1) {
+    width: 100%;
+    text-align: center;
+}
+
+.push-result > :nth-child(2) {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.push-result > :nth-child(3) {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+
+#label-container {
+    width: 100%;
+    margin: 2rem;
+    background-color: aqua;
+    overflow: hidden;
+}
+
+.bar-container {
+    height: 2.7rem;
+}
+
+.feeling-label {
+    position: relative;
+}
+
+.feel-list {
+    margin-top: 1rem;
+    position: relative;
+    width: 80%;
+    left: 5rem;
+    background-color: beige;
+    margin: 0 auto;
+    
+}
+.기쁨-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 5px;
+  background-color: yellow;
+}
+
+.까칠-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 5px;
+    background-color: yellow;
+  }
+
+  .놀람-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 3px;
+    background-color: yellow;
+  }
+
+  .분노-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 3px;
+    background-color: yellow;
+  }
+
+  .소심-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 3px;
+    background-color: yellow;
+  }
+
+  .슬픔-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 3px;
+    background-color: yellow;
+  }
+
+
+.기쁨-box {
+    position: absolute;
+    top: 0;
+    left: 3rem;
+    height: 2rem;
+    border-radius: 5px;
+    width: 60%;
+    background-color:red
+}
+
+.까칠-box {
+    position: absolute;
+    top: 0;
+    left: 3rem;
+    height: 2rem;
+    border-radius: 5px;
+    width: 60%;
+    background-color:red
+}
+
+.놀람-box {
+    position: absolute;
+    top: 0;
+    left: 3rem;
+    height: 2rem;
+    border-radius: 5px;
+    width: 60%;
+    background-color:red
+}
+
+.분노-box {
+    position: absolute;
+    top: 0;
+    left: 3rem;
+    height: 2rem;
+    border-radius: 5px;
+    width: 60%;
+    background-color:red
+}
+
+.소심-box {
+    position: absolute;
+    top: 0;
+    left: 3rem;
+    height: 2rem;
+    border-radius: 5px;
+    width: 60%;
+    background-color:red
+}
+
+.슬픔-box {
+    position: absolute;
+    top: 0;
+    left: 3rem;
+    height: 2rem;
+    border-radius: 5px;
+    width: 60%;
+    background-color:red
+}
+
+
+.reload-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.reload-image {
+    background-color: beige;
+}
 
   @media only screen and (max-width: 980px) {
     .header-list ul {

@@ -15,7 +15,9 @@ const URL = "https://teachablemachine.withgoogle.com/models/ajfH_-5E0/";
             maxPredictions = model.getTotalClasses();
             labelContainer = document.getElementById("label-container");
             for (let i = 0; i < maxPredictions; i++) { // and class labels
-                labelContainer.appendChild(document.createElement("div"));
+                let element = document.createElement("div")
+                element.classList.add("feel-list");
+                labelContainer.appendChild(element);
             }
         }
     
@@ -82,7 +84,7 @@ const URL = "https://teachablemachine.withgoogle.com/models/ajfH_-5E0/";
         let explain = `<div class='${prediction[0].className}-explain'> ${resultExplain}</div>`;
         let cause = `<div class ='${prediction[0].className}-cause'> ${resultCause}</dlv>`;
         let sol = `<div class ='${prediction[0].className}-sol'> ${resultSol}</div>`;
-        let pushResult = document.querySelector('.push-result');
+        
         $('.push-result').html(title + explain + cause + sol);
         let barWidth;
         for (let i = 0; i < maxPredictions; i++) {
@@ -126,10 +128,10 @@ const URL = "https://teachablemachine.withgoogle.com/models/ajfH_-5E0/";
             }
             console.log(barWidth);
             let label = `<div class ='feeling-label'> ${labelTitle} </div>`
-            let bar = `<div class ='bar-container><div class='${prediction[i].className}-box'></div><div class='align-center ${prediction[i].className}-bar' style='width:${barWidth}'><span class ='percent-text'>${Math.round(prediction[i].probability.toFixed(2) * 100)}%</span></div></div>`;
+            let bar = `<div class ='bar-container'><div class='${prediction[i].className}-box'><div class='align-center ${prediction[i].className}-bar' style='width:${barWidth}'><span class ='percent-text'>${Math.round(prediction[i].probability.toFixed(2) * 100)}%</span></div></div>`;
             labelContainer.childNodes[i].innerHTML = label + bar;
 
-
+          
         }
 
     }
