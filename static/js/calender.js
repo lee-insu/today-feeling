@@ -247,14 +247,15 @@ function addFeelList() {
     feelList[keyValue].push(inputBox.value);
     dataCnt++;
     inputBox.value ='';
+    console.log(feelList)
     div.addEventListener('click',checkList);
     btn.addEventListener('click',deleteFeel);
-    }
+    
     function deleteFeel() {
         div.remove();
         btn.remove();
     }
-    
+}
 }
 console.log(init.selectDay);
 function checkList(e) {
