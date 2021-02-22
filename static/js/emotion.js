@@ -31,61 +31,54 @@ const URL = "https://teachablemachine.withgoogle.com/models/ajfH_-5E0/";
 
         switch(prediction[0].className) {
             case "기쁨" :
-            resultTitle = "기쁨"
-            resultExplain = "explain"
-            resultCause = "cause"
-            resultSol = "sol"
+            resultTitle = "기쁨에 날뛰는"
+            resultExplain = "#이것은 설명이다 #그렇다 설명이다"
+            resultCause = "이것에 대한 행동 분석이다 그렇다, 이것에 대한 행동 분석이다 그렇다, 이것에 대한 행동 분석이다 그렇다,이것에 대한 행동 분석이다 그렇다이것에 대한 행동 분석이다 그렇다이것에 대한 행동 분석이다 그렇다이것에 대한 행동 분석이다 그렇다이것에 대한 행동 분석이다 그렇다"
             break;
 
             case "까칠" :
             resultTitle = "까칠"
             resultExplain = "explain"
             resultCause = "cause"
-            resultSol = "sol"
             break;
 
             case "놀람" :
             resultTitle = "놀람"
             resultExplain = "explain"
             resultCause = "cause"
-            resultSol = "sol"
             break;
 
             case "분노" :
             resultTitle = "분노"
             resultExplain = "explain"
             resultCause = "cause"
-            resultSol = "sol"
             break;
 
             case "소심" :
             resultTitle = "panic"
             resultExplain = "explain"
             resultCause = "cause"
-            resultSol = "sol"
             break;
 
             case "슬픔" :
             resultTitle = "슬픔"
             resultExplain = "explain"
             resultCause = "cause"
-            resultSol = "sol"
             break;
 
             default:
              resultTitle = "un"
              resultExplain = "un"
              resultCause = "unf"
-             resultSol = "un"
              break;
         }
         console.log(prediction)
         let title = `<div class= '${prediction[0].className}-feeling-title'> ${resultTitle}</div>`;
         let explain = `<div class='${prediction[0].className}-explain'> ${resultExplain}</div>`;
         let cause = `<div class ='${prediction[0].className}-cause'> ${resultCause}</dlv>`;
-        let sol = `<div class ='${prediction[0].className}-sol'> ${resultSol}</div>`;
         
-        $('.push-result').html(title + explain + cause + sol);
+        
+        $('.push-result').html(title + explain + cause);
         let barWidth;
         for (let i = 0; i < maxPredictions; i++) {
             if(prediction[i].probability.toFixed(2) > 0.1) {
