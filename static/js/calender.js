@@ -142,7 +142,7 @@ let loadYM = (fullDate) => {
     }
 
     document.querySelector('.cdr-month').textContent = init.monList[mm];
-    document.querySelector('.cdr-year').textContent = yy;
+    document.querySelector('.cdr-year').textContent = yy+'년';
 
     let trtd ='',
         startCount,

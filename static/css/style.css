@@ -171,8 +171,8 @@ section {width: 100%;}
 
 .loading-message {
         font-family: AppleSDGothicNeo;
-        font-size: 1.5rem;
-        font-weight: 600;
+        font-size: 1.3rem;
+        font-weight: 400;
         font-stretch: normal;
         font-style: normal;
         line-height: 1.19;
@@ -446,9 +446,27 @@ input {
   margin-top: 8px;
 }
 
+.next, .prev {
+    border: none;
+    background-color: #fff;
+    
+}
+
 .calender-container {
     margin-top: 30%;
-    background-color: aqua;
+    height: 100%;
+    border: 2px solid rgb(80, 80, 80);
+    border-radius: 10px;
+    padding: 10px;
+    
+}
+
+.cdr-month, .cdr-year {
+    font-family: AppleSDGothicNeo;
+    font-weight: 600;
+    font-size: 1rem;
+    color: rgb(73, 73, 73);
+
 }
 
 .cdr-date {
@@ -460,18 +478,47 @@ input {
 .calender-box {
     background-color:yellow;
     width: 400px;
-    height: 400px;
+    height: 25rem;
     margin: 0 auto;
     border: 1px solid #ddd;
 }
 
 .cdr-box {text-align: center;}
 
+
 .cdr-table {
     width: 100%;
+    height: 100%;
     text-align: center; 
-    background-color: cadetblue;
+    font-family: AppleSDGothicNeo;
+    margin-top: 0.5rem;
+    
 }
+
+.cdr-table > thead {
+    font-size: 0.8rem;
+    color: rgb(114, 114, 114);
+}
+
+.cdr-table > tbody {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.cdr-body > tr {
+    margin-bottom: 2rem;
+
+}
+
+.cdr-body > tr >:nth-child(7) {
+    color: rgb(170, 170, 170);
+}
+
+.cdr-body > tr >:nth-child(1) {
+    color: rgb(170, 170, 170);
+}
+
+
 
 .cdr-btn {
     position: relative;
