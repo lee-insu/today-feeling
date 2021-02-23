@@ -851,21 +851,39 @@ input {
         margin: 0;
     }
     
+    ul {
+        display: none;
+    }
     .header-logo {margin: 30px 0 30px 38.5%;}
 
 
     .logo {
-        width: 280px;
+        width: 48%;
         height: auto;
       }
 
     .face-upload {
-        margin: 0 0 75vw 0;
+        margin-top:5rem;
         width: 100%;
-        height: 80vh;
+        height: 120vh;
         position: relative;
+        background-color: #ffc6ff;
     }
-    
+
+    .face-upload-wrap {
+        position: relative;
+        height: 100%;
+        background-color: #FF99FF;
+    }
+
+    .upload-hand-image {
+        position: relative;
+        width: 40rem;
+        height: auto;
+        left:23%
+        
+        
+    }
 
     .face-text {
         font-family: AppleSDGothicNeo;
@@ -877,7 +895,11 @@ input {
         letter-spacing: normal;
         color: #707070;
         position: relative;
-        left: 26%;
+        background-color: #f7e600;
+        width: 100%;
+        margin-top: 14rem;
+        left: 25%;
+        
     
     }   
 
@@ -888,12 +910,6 @@ input {
         
     }
 
-    .header-list ul {
-        height: 320vh;
-        margin-top: 14vh;
-        right: -247%;
-        width: 70%;
-    }
 
     .content-title {
         width: 100%;
@@ -933,50 +949,6 @@ input {
         }
 
 
-
-
-    /**/
-    .nav-links {
-        position: absolute;
-        top:20px;
-        right: 0;
-        height: 100vh;
-        background-color: #bebebe;
-        flex-direction: column;
-        align-items: center;
-        width: 80%;
-        transform: translateX(100%);
-        
-        
-    }
-
-    .nav-links li {
-        opacity: 0;
-        margin: 0;
-
-    }
-
-    .burger {
-        display:block;
-        margin: 40px 0 0 70%;
-    }
-
-    
-
-    .nav-active {
-        transform: translateX(30%);
-    }
-
-    @keyframes navLinkFade {
-        from {
-            opacity: 0;
-            transform: translateX(0px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
 
 }
 
