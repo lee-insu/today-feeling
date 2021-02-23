@@ -865,20 +865,23 @@ input {
     .face-upload {
         margin-top:5rem;
         width: 100%;
-        height: 120vh;
+        height: 100vh;
         position: relative;
-        background-color: #ffc6ff;
+    
     }
 
     .face-upload-wrap {
         position: relative;
         height: 100%;
-        background-color: #FF99FF;
+ 
     }
 
     .upload-hand-image {
         position: relative;
         width: 40rem;
+        border: 5px solid rgb(233, 233, 233);
+        border-radius: 20%;
+        padding: 2rem;
         height: auto;
         left:23%
         
@@ -887,7 +890,7 @@ input {
 
     .face-text {
         font-family: AppleSDGothicNeo;
-        font-size: 35px;
+        font-size: 40px;
         font-weight: 600;
         font-stretch: normal;
         font-style: normal;
@@ -895,13 +898,55 @@ input {
         letter-spacing: normal;
         color: #707070;
         position: relative;
-        background-color: #f7e600;
         width: 100%;
-        margin-top: 14rem;
-        left: 25%;
+        margin-top: 9rem;
+        left: 22%;
         
     
     }   
+
+    #loading {
+        height: 30vh;
+    }
+
+    .loading-message {
+        font-size: 2rem;
+    }
+
+    .push-result > :nth-child(1) {
+        font-size: 3.3rem;
+    }
+
+    .push-result > :nth-child(2) {
+        font-size: 2.3rem;
+    }
+
+    .push-result > :nth-child(3) {
+        font-size: 1.3rem;
+    }
+
+    .label-container {
+        width: 100%;
+        height: 80vh;
+    }
+
+    .feeling-label {
+        font-size: 1.5rem;
+    }
+
+    .feel-list {
+        margin-top: 30%;
+        position: relative;
+        width: 80%;
+        height: 6.5vh;
+        left: 5rem;
+        margin: 0 auto;
+        
+    }
+
+    .image-result {
+        height: 90vh;
+    }
 
     .content-container {
         width: 100%; 
@@ -926,6 +971,55 @@ input {
         margin-left: 138px;
 
         }
+        .기쁨-bar {
+            height: 2.7rem;
+          }
+          
+          .까칠-bar {
+              height: 2.7rem;
+            }
+          
+            .놀람-bar {
+              height: 2.7rem;
+
+            }
+          
+            .분노-bar {
+              height: 2.7rem;
+            }
+          
+            .소심-bar {
+              height: 2.7rem;
+            }
+          
+            .슬픔-bar {
+              height: 2.7rem;
+            }
+          
+          
+          .기쁨-box {
+              height: 2.7rem;
+          }
+          
+          .까칠-box {
+              height: 2.7rem;
+          }
+          
+          .놀람-box {
+              height: 2.7rem;
+          }
+          
+          .분노-box {
+              height: 2.7rem;
+          }
+          
+          .소심-box {
+              height: 2.7rem;
+          }
+          
+          .슬픔-box {
+              height: 2.7rem;
+          }    
     
         .content-list {
             margin-top: 35px;
