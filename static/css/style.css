@@ -500,10 +500,17 @@ input {
 .calender-container {
     margin-top: 30%;
     height: 100%;
-    border: 2px solid rgb(80, 80, 80);
     border-radius: 10px;
     padding: 10px;
+    box-shadow: 5px 5px 5px -5px #a8a7a6 ;
     
+}
+
+.date-day {
+    padding: 5rem;
+    background-color:#EB7E52;
+    border: 0px solid;
+    border-radius: 30px;
 }
 
 .cdr-month, .cdr-year {
@@ -515,13 +522,40 @@ input {
 }
 
 .cdr-date {
-    width: 400px;
+    width: 100%;
+    height: 100%;
     margin: 0 auto;
-    border: 1px solid #ddd;
+    font-family: AppleSDGothicNeo;
+    font-weight: 600;
+    font-size: 4rem;
+    color:#fff
+    
+}
+
+.cdr-day {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    font-family: AppleSDGothicNeo;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color:#ffdec8
+}
+
+.feeling-container {
+    margin-top: 3rem;
+}
+
+.feeling-title {
+    font-family: AppleSDGothicNeo;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color:#585858;
 }
 
 .calender-box {
-    background-color:yellow;
+    
     width: 400px;
     height: 25rem;
     margin: 0 auto;
