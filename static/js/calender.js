@@ -205,7 +205,12 @@ function clickDay (e) {
            inputList.children[0].remove();
        }
         console.log('c');
-        
+        let today = document.querySelector('.today');
+        if (!today) {
+            today;
+        }else {
+        today.classList.remove('today');
+        }
         }
 }
 

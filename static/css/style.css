@@ -8,6 +8,7 @@ a:hover{text-decoration: none; cursor: pointer;}
 ul {margin: 0; padding: 0;}
 li{list-style: none;}
 button:hover{cursor: pointer;}
+.nav-icon{display: none;}
 
 
 header {
@@ -30,19 +31,6 @@ nav {
     display: flex;
 
 }
-.burger {
-    display: none;
-    cursor: pointer;
-}
-
-.burger div {
-    width: 50px;
-    height: 6px;
-    background-color:#bebebe;
-    border-radius: 2px;
-    margin: 10px;
-    transition: all 0.3s ease;
-  }
 
 .header-container {
     width: 100%;
@@ -126,8 +114,8 @@ section {width: 100%;}
     letter-spacing: normal;
     color: #707070;
     position: absolute;
-    bottom: 31px;
-    left:392px;
+    bottom: 4rem;
+    left:24rem;
 
 }   
 .upload-hand-image {
@@ -540,7 +528,7 @@ input {
     
 }
 
-.day-active {
+.day-active, .today {
     background-color: #EB7E52;
     border-radius: 4rem;
     color: #fff;
@@ -871,7 +859,7 @@ input {
     .face-upload {
         margin-top:5rem;
         width: 100%;
-        height: 100vh;
+        height: 120vh;
         position: relative;
     
     }
@@ -885,14 +873,11 @@ input {
     .upload-hand-image {
         position: relative;
         width: 40rem;
-        border: 5px solid rgb(245, 245, 245);
+        border: 5px dashed rgb(245, 245, 245);
         border-radius: 20%;
         padding: 2rem;
         height: auto;
         left:23%
-        
-        
-        
     }
 
     .face-text {
@@ -1048,21 +1033,32 @@ input {
         #backtotop {
             display: none;
         }
+        .header-list {
+            overflow: hidden;
+            background-color: #fff;
+            position: relative;
+        }
+
+        .header-list > .nav-link {
+            display: none;
+        }
+        
+        .nav-link > li > a {
+            color:#000;
+            width: 100%;
+            text-decoration: none;
+            font-size: 10px;
+            display: block;
+        }
+        .nav-icon {
+            display:block;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
 
 
 
-}
-
-.toggle .line1 {
-    transform: translateY(16px);
-}
-
-.toggle .line2 {
-    opacity: 0;
-}
-
-.toggle .line3 {
-    transform: translateY(-16px);
 }
 
 
