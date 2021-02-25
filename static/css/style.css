@@ -8,8 +8,7 @@ a:hover{text-decoration: none; cursor: pointer;}
 ul {margin: 0; padding: 0;}
 li{list-style: none;}
 button:hover{cursor: pointer;}
-.nav-icon{display: none;}
-
+.nav-icon {display: none;}
 
 header {
     width: 100%;
@@ -31,6 +30,19 @@ nav {
     display: flex;
 
 }
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(226, 226, 226);
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
 
 .header-container {
     width: 100%;
@@ -1039,27 +1051,13 @@ input {
             position: relative;
         }
 
-        .header-list > .nav-link {
+        .nav-links {
             display: none;
         }
         
-        .nav-link > li > a {
-            color:#000;
-            width: 100%;
-            text-decoration: none;
-            font-size: 10px;
-            display: block;
-        }
-        .nav-icon {
-            display:block;
-            position: absolute;
-            right: 0;
-            top: 0;
-        }
-
-
 
 }
+
 
 
 

@@ -20,13 +20,11 @@
                 <li><a href="/templates/login.html">로그인</a></li>
                 <li><a href="/templates/register.html">회원가입</a></li>
             </ul>
+            <a href="javascript:void(0)" class="nav-icon" onclick="navClick();"><i class="fas fa-bars"></i></a>
             </nav>
            </div>
-       </div>
-                  
+       </div>   
     </header>
- 
-
 
     <section>
         <div class="inner">
@@ -102,8 +100,17 @@
         <a id="backtotop"></a>
     </footer>
     <script src="../static/js/backtotop.js"></script>
-    <script src="../static//js/nav.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script>
+        const navClick = () => {
+            let nav = document.querySelector('.nav-links');
+            if (nav.style.display === 'block') {
+                nav.style.display = 'none';
+            }else {
+                nav.style.display = 'block';
+            }
+        }
+    </script>
     <script>
         $('#loading').hide();
         $('.image-result').hide();
