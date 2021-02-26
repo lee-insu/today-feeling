@@ -20,7 +20,11 @@
                 <li><a href="/templates/login.html">로그인</a></li>
                 <li><a href="/templates/register.html">회원가입</a></li>
             </ul>
-            <a href="javascript:void(0)" class="nav-icon" onclick="navClick();"><i class="fas fa-bars"></i></a>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+              </div>
             </nav>
            </div>
        </div>   
@@ -100,17 +104,24 @@
         <a id="backtotop"></a>
     </footer>
     <script src="../static/js/backtotop.js"></script>
+    <script src="../static/js/nav.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <!--  
     <script>
         const navClick = () => {
-            let nav = document.querySelector('.nav-links');
-            if (nav.style.display === 'block') {
-                nav.style.display = 'none';
-            }else {
-                nav.style.display = 'block';
+            let burger = document.querySelector('.burger');
+            let navLinks = document.querySelector('.nav-links');
+
+            if (burger.style.display = 'block') {
+                navLinks.style.display = 'none';
+                
+                const showNav = () => {
+                    navLinks.style.display = 'block';
+                }
+                burger.addEventListener('click', showNav());
             }
         }
-    </script>
+    </script>-->
     <script>
         $('#loading').hide();
         $('.image-result').hide();

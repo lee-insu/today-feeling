@@ -1,5 +1,5 @@
 const burger = document.querySelector(".burger"),
-      nav = document.querySelector(".nav-links"),
+      nav = document.querySelector(".header-list ul"),
       navLinks = document.querySelectorAll(".nav-links li"),
       body = document.querySelector('body');
 
