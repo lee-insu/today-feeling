@@ -34,13 +34,18 @@ nav {
 .burger {
     display: none;
     cursor: pointer;
+    width: 100%;
+
 }
 
 .burger div {
-    width: 25px;
+    width: 50px;
     height: 3px;
-    background-color: rgb(226, 226, 226);
-    margin: 5px;
+    background-color: rgb(192, 192, 192);
+    margin: 0px 0px 10px 0px;
+    top: 3.5rem;
+    left: 1rem;
+    position: relative;
     transition: all 0.3s ease;
   }
 
@@ -1054,11 +1059,11 @@ input {
         .header-list > ul {
             margin: 0;
             position: absolute;
-            top: 8vh;
+            top: 16vh;
             height: 100vh;
             background-color: #fff;
             box-shadow :0px 10px 10px 0px #f0f0f0;
-            width: 70%;
+            width: 100%;
             display: flex;
             justify-content: flex-start;
             flex-direction: column;
@@ -1074,12 +1079,27 @@ input {
 
         .nav-links li {
             opacity: 0;
-            margin-top: 2rem;
+            margin-top: 3rem;
           }
+
+        .nav-links li a {
+            font-size: 30px;
+            margin-bottom: 5rem;
+        }
+
+        .nav-links li a:after {
+            content: "";
+            display: block;
+            width: 7rem;
+            border-bottom: 1px solid #a09f9f;
+            margin: 3px 0px;
+        }
+        
         .burger {
             display: block;
+            width: 100%;
+
           }
-        
         .nav-active {
             transform: translateX(0%);
           }
