@@ -302,10 +302,11 @@ section {width: 100%;}
 
 }
 
-.user-form {margin-top:44px;}
+
 
 .info-title {
-  width: 100%;
+  width: 50%;
+  margin: 0 auto;
   height: 24px;
   font-family: AppleSDGothicNeo;
   font-size: 20px;
@@ -381,9 +382,15 @@ input {
     color:#707070
 }
 
-.button-session {
+.on-session {
     margin-top:30px;
     background-color: #fff;
+}
+
+.button-session {
+    width: 26.8rem;
+    position: relative;
+    margin-top: 2rem;
 }
 .btn-style{
     width: 100%;
@@ -511,7 +518,7 @@ input {
 }
 
 .calender-container {
-    margin-top: 30%;
+    margin-top: 10%;
     height: 100%;
     border-radius: 10px;
     padding: 10px;
@@ -1121,10 +1128,112 @@ input {
 
 
 /*calender*/
- .user-inner {
-     width: 100%;
-     margin: 0 auto;
+ 
+ .calender-container {
+     margin-top: 16rem;
  }
+
+ .date-day {
+    width: 40rem;;
+ }
+ .cdr-date {
+     font-size: 10rem;
+ }
+.cdr-day {
+    font-size: 4rem;
+}
+.feeling-title {
+    font-size: 3.5rem;
+}
+.input-box {
+    width: 23rem;
+    height: 3.7rem;
+    font-size: 1.5rem;
+    
+}
+.calender-box {
+    width: 55%;
+    height: 35rem;
+    margin: 0 auto;
+   
+}
+.input-data {
+    font-size: 2.2rem;
+    padding: 10px;
+    border-radius: 13px;
+    
+}
+.feeling-input, .calender-box {
+    margin-top: 2rem;
+}
+.cdr-year, .cdr-month, .cdr-btn {
+    font-size: 2.5rem;
+}
+.cdr-table > thead,.day {
+    font-size: 2rem;
+}
+.cdr-table {
+    margin-top: 2rem;
+}
+
+/*register, login*/
+
+.btn-style {
+    width: 26.8rem;
+}
+.button-session{
+    height: 100%;
+    width: 30%;
+}
+
+.register-title, .login-title {
+    font-size: 4rem;
+}
+
+.user-inner {
+    width: 80%;
+    margin-top: 6rem;
+}
+
+.info-title {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.id, .pw, .pwre {
+    width: 100%;
+    margin-top: 2rem;
+    font-size: 2rem;
+    height:7rem;
+    border-radius: 6px;
+    font-weight: 200;
+    border: solid 1.5px #bebebe;
+    background-color: #ffffff;
+  }
+
+  .button-session {
+      width: 100%;
+      margin-top: 2rem;
+  }
+  .btn-style {
+      width: 100%;
+      height: 7rem;
+      font-size: 2.3rem;
+      margin-top: 1.3rem;
+  }
+  
+  .sele {
+      width: 100%;
+      margin: 0 auto;
+      font-size: 1rem;
+  }
+
+  .or-line-stoke {
+      display:none;
+      
+  }
+
+
 
 
 }

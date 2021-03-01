@@ -8,24 +8,30 @@
 </head>
 <body>
     <header>
-        <div class="inner">
-            <div class="header-container">
-             <div class="header-logo"><a href="../templates/index.html"><img src="../static/img/logo.png" alt="logo" class="logo"></a>
-            </div>
-            </div>
-        </div>
-     </header>
+       <div class="inner">
+           <div class="header-container">
+            <div class="header-logo"><a href=""><img src="../static/img/logo.png" alt="logo" class="logo"></a></div>
+            <nav class="header-list"> 
+                <ul class= "nav-links">
+                <li><a href="/templates/calender.html">캘린더</a></li>
+                <li><a href="/templates/login.html">로그인</a></li>
+                <li><a href="/templates/register.html">회원가입</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+              </div>
+            </nav>
+           </div>
+       </div>   
+    </header>
 
      <section> 
-        <div class="user-inner">
+        <div class="inner">
             <div class="title-container">
                 <div class="register-title">회원가입</div>
             </div>
-        </div>
-
-     </section>
-
-    <section class="user-form">
         <div class="user-inner">
             <form action="/">
             <div class="info-title">닉네임</div>
@@ -42,7 +48,9 @@
                 <button class="kakao-btn btn-style">카카오로 가입하기</button>
                 <button class="google-btn btn-style">구글로 가입하기</button>
                 </div>
+         </div>
         </div>
-    </section>
+        </section>
+<script src="../static/js/nav.js"></script>
 </body>
 </html>

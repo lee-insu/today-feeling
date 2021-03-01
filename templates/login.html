@@ -10,22 +10,28 @@
     <header>
         <div class="inner">
             <div class="header-container">
-             <div class="header-logo"><a href="../templates/index.html"><img src="../static/img/logo.png" alt="logo" class="logo"></a>
+             <div class="header-logo"><a href=""><img src="../static/img/logo.png" alt="logo" class="logo"></a></div>
+             <nav class="header-list"> 
+                 <ul class= "nav-links">
+                 <li><a href="/templates/calender.html">캘린더</a></li>
+                 <li><a href="/templates/login.html">로그인</a></li>
+                 <li><a href="/templates/register.html">회원가입</a></li>
+             </ul>
+             <div class="burger">
+                 <div class="line1"></div>
+                 <div class="line2"></div>
+                 <div class="line3"></div>
+               </div>
+             </nav>
             </div>
-            </div>
-        </div>
+        </div>   
      </header>
 
      <section> 
-        <div class="user-inner">
+        <div class="inner">
             <div class="title-container">
                 <div class="login-title">로그인</div>
             </div>
-        </div>
-
-     </section>
-
-    <section class="user-form">
         <div class="user-inner">
             <form action="/">
             <div class="info-title">닉네임</div>
@@ -46,6 +52,8 @@
                 <button class="google-btn btn-style">구글로 시작하기</button>
                 </div>
         </div>
+    </div>
     </section>
+    <script src="../static/js/nav.js"></script>
 </body>
 </html>
