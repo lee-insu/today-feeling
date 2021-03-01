@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>오늘의 기분</title>
     <link rel="stylesheet" href="../static/css/style.css">
      <script src="https://kit.fontawesome.com/f1def33959.js" crossorigin="anonymous"></script>
 </head>
@@ -11,12 +11,12 @@
     <header>
         <div class="inner">
             <div class="header-container">
-             <div class="header-logo"><a href="/templates/index.html"><img src="../static/img/logo.png" alt="logo" class="logo"></a></div>
+             <div class="header-logo"><a href="/"><img src="../static/img/logo.png" alt="logo" class="logo"></a></div>
              <nav class="header-list"> 
                  <ul class= "nav-links">
-                 <li><a href="/templates/calender.html">캘린더</a></li>
-                 <li><a href="/templates/login.html">로그인</a></li>
-                 <li><a href="/templates/register.html">회원가입</a></li>
+                 <li><a href="/calender">캘린더</a></li>
+                 <li><a href="/login">로그인</a></li>
+                 <li><a href="/register">회원가입</a></li>
              </ul>
              <div class="burger">
                 <div class="line1"></div>
@@ -29,8 +29,12 @@
      </header>
      <section>
          <div class="inner">
+    
          <!-- 네모 박스 데이트  -->
          <div class="calender-container">
+            {%if usernameinfo %}
+            <h3>{{usernameinfo}}님</h3>
+            {%endif%}
             <div class="clicked-date">
                 <div class="today-check"> 
                 <div class="date-day">

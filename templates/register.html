@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>오늘의 기분</title>
     <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
     <header>
        <div class="inner">
            <div class="header-container">
-            <div class="header-logo"><a href=""><img src="../static/img/logo.png" alt="logo" class="logo"></a></div>
+            <div class="header-logo"><a href="/"><img src="../static/img/logo.png" alt="logo" class="logo"></a></div>
             <nav class="header-list"> 
                 <ul class= "nav-links">
-                <li><a href="/templates/calender.html">캘린더</a></li>
-                <li><a href="/templates/login.html">로그인</a></li>
-                <li><a href="/templates/register.html">회원가입</a></li>
+                <li><a href="/calender">캘린더</a></li>
+                <li><a href="/login">로그인</a></li>
+                <li><a href="/register">회원가입</a></li>
             </ul>
             <div class="burger">
                 <div class="line1"></div>
@@ -33,16 +33,14 @@
                 <div class="register-title">회원가입</div>
             </div>
         <div class="user-inner">
-            <form action="/">
+            <form action="/register" method="post">
             <div class="info-title">닉네임</div>
             <input type="text" name="id" class="id" placeholder="&nbsp 닉네임을 입력해주세요">
             <div class="info-title">비밀번호</div>
             <input type="password" name=pw class="pw" placeholder="&nbsp 비밀번호를 입력해주세요">
-            <div class="info-title">비밀번호 확인</div>
-            <input type="password" name=pwre class="pwre" placeholder="&nbsp 비밀번호를 다시 입력해주세요">
-            </form>
                 <div class="button-session">
-                <button class="login-btn btn-style">회원가입</button>
+                <button type="submit" class="login-btn btn-style">회원가입</button>
+             </form>
                 <div class="sele">이용약관, 개인정보 수집 및 이용, 개인정보 제공 내용을 확인하였고 동의합니다.</div>
                 <div class="or-line-stoke"></div>
                 <button class="kakao-btn btn-style">카카오로 가입하기</button>

@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>오늘의 기분</title>
     <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
     <header>
         <div class="inner">
             <div class="header-container">
-             <div class="header-logo"><a href=""><img src="../static/img/logo.png" alt="logo" class="logo"></a></div>
+             <div class="header-logo"><a href="/"><img src="../static/img/logo.png" alt="logo" class="logo"></a></div>
              <nav class="header-list"> 
                  <ul class= "nav-links">
-                 <li><a href="/templates/calender.html">캘린더</a></li>
-                 <li><a href="/templates/login.html">로그인</a></li>
-                 <li><a href="/templates/register.html">회원가입</a></li>
+                 <li><a href="/calender">캘린더</a></li>
+                 <li><a href="/login">로그인</a></li>
+                 <li><a href="/register">회원가입</a></li>
              </ul>
              <div class="burger">
                  <div class="line1"></div>
@@ -33,20 +33,20 @@
                 <div class="login-title">로그인</div>
             </div>
         <div class="user-inner">
-            <form action="/">
+            <form action="/login" method="post">
             <div class="info-title">닉네임</div>
             <input type="text" name="id" class="id" placeholder="&nbsp 닉네임을 입력해주세요">
             <div class="info-title">비밀번호</div>
             <input type="password" name=pw class="pw" placeholder="&nbsp 비밀번호를 입력해주세요">
-            </form>
                 <div class="info-list">
                     <ul>
                         <li><a href=""><u>비밀번호를 잊으셨나요?</u></a></li>
-                        <li><a href="../templates/register.html"><u>회원가입 하러가기</u></a></li>
+                        <li><a href="/register"><u>회원가입 하러가기</u></a></li>
                     </ul>
                 </div>
                 <div class="button-session">
-                <button class="login-btn btn-style">로그인</button>
+                <button type="submit" class="login-btn btn-style">로그인</button>
+            </form>
                 <div class="or-line-stoke"></div>
                 <button class="kakao-btn btn-style">카카오로 시작하기</button>
                 <button class="google-btn btn-style">구글로 시작하기</button>

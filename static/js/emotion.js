@@ -116,7 +116,7 @@ const URL = "https://teachablemachine.withgoogle.com/models/ajfH_-5E0/";
                 break;
 
                 default:
-                labelTitle = "dun"
+                labelTitle = "존재하지 않음"
                 break;
             }
             console.log(barWidth);
