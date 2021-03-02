@@ -56,7 +56,7 @@ const URL = "https://teachablemachine.withgoogle.com/models/ajfH_-5E0/";
 
             case "소심" :
             resultTitle = "소심한 포도"
-            resultExplain = "이거 뭐지..? #뭘까....? #응.....? #으잉....?"
+            resultExplain = "#이거 뭐지..? #뭘까....? #응.....? #으잉....?"
             resultCause = "소심한 표정을 가지고 있는 당신! 나도 모르게 의기소침해지지 않나요? 평소와 다르게 괜히 말도 조심하게 되고 음추러 들진 않나요? 그렇다면 코인 노래방에서 노래 한 곡 뽑는 건 어떤가요?"
             break;
 
