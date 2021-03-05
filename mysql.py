@@ -5,7 +5,7 @@ MYSQL_CONN = pymysql.connect(
     host = MY_SQL,
     port = 3306,
     user = 'root',
-    passwd = 'xxxxx',
+    passwd = 'rootmysql',
     db = 'board_db3',
     charset = 'utf8mb4'
 )
