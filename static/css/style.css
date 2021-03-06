@@ -911,7 +911,7 @@ input {
 
     .face-upload {
         width: 100%;
-        height: 50vh;
+        height: auto;
         position: relative;
         margin: 0 auto;
     
@@ -952,46 +952,47 @@ input {
     }   
 
     #loading {
-        height: 30vh;
+        margin-top: 0;
     }
 
     .loading-message {
-        font-size: 2rem;
+        font-size: 1.2rem;
     }
 
     .push-result > :nth-child(1) {
-        font-size: 3.3rem;
+        font-size: 2rem;
     }
 
     .push-result > :nth-child(2) {
-        font-size: 2.3rem;
-    }
-
-    .push-result > :nth-child(3) {
-        font-size: 1.3rem;
-    }
-
-    .label-container {
-        width: 100%;
-        height: 80vh;
-    }
-
-    .feeling-label {
         font-size: 1.5rem;
     }
 
-    .feel-list {
-        margin-top: 30%;
-        position: relative;
-        width: 80%;
-        height: 6.5vh;
-        left: 5rem;
-        margin: 0 auto;
-        
+    .push-result > :nth-child(3) {
+        font-size: 0.9rem;
+        width: 90%;
     }
 
+    
+
+    .feeling-label {
+        font-size: 1.1rem;
+    }
+
+    .feel-list {
+        position: relative;
+        width: 100%;
+        height: auto;
+        left: 8%;
+        margin: 0 auto;
+
+    }
+    .reload-btn {
+        margin-top: 1rem;
+    }
     .image-result {
         height: 90vh;
+        width: 90%;
+
     }
 
     .content-container {
@@ -1017,54 +1018,62 @@ input {
         margin-left: 10%;
 
         }
+
+    #label-container {
+        margin: 1rem 0 0 0;
+        width: 100%;
+        height: auto;
+        
+
+    }
         .기쁨-bar {
-            height: 2.7rem;
+            height: 2rem;
           }
           
           .까칠-bar {
-              height: 2.7rem;
+              height: 2rem;
             }
           
             .놀람-bar {
-              height: 2.7rem;
+              height: 2rem;
 
             }
           
             .분노-bar {
-              height: 2.7rem;
+              height: 2rem;
             }
           
             .소심-bar {
-              height: 2.7rem;
+              height: 2rem;
             }
           
             .슬픔-bar {
-              height: 2.7rem;
+              height: 2rem;
             }
           
           
           .기쁨-box {
-              height: 2.7rem;
+              height: 2rem;
           }
           
           .까칠-box {
-              height: 2.7rem;
+              height: 2rem;
           }
           
           .놀람-box {
-              height: 2.7rem;
+              height: 2rem;
           }
           
           .분노-box {
-              height: 2.7rem;
+              height: 2rem;
           }
           
           .소심-box {
-              height: 2.7rem;
+              height: 2rem;
           }
           
           .슬픔-box {
-              height: 2.7rem;
+              height: 2rem;
           }    
     
         .content-list {
