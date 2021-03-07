@@ -304,6 +304,11 @@ section {width: 100%;}
 
 }
 
+.info-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
 
 
 .info-title {
@@ -875,6 +880,15 @@ input {
     .inner {
         width: 1205px;
     }
+    .info-container{
+        width: 427px;
+    }
+}
+
+@media only screen and (max-width: 1205px) {
+    .info-container{
+        width: 427px;
+    }
 }
 
 
@@ -887,7 +901,9 @@ input {
         justify-content: space-between;
         position: absolute;
     }
-
+    .info-container{
+        width: 427px;
+    }
   }
   @media only screen and (max-width: 480px) {
     body {overflow-x: hidden;}
@@ -1205,53 +1221,69 @@ input {
 /*calender*/
  
  .calender-container {
-     margin-top: 16rem;
+     margin-top: 2rem;
+     width: 95%;
+     margin: 0 auto;
  }
 
+
  .date-day {
-    width: 40rem;;
+    width: 20rem;
+    height: auto;
  }
  .cdr-date {
-     font-size: 10rem;
+     font-size: 7rem;
  }
 .cdr-day {
-    font-size: 4rem;
+    font-size: 2rem;
 }
 .feeling-title {
-    font-size: 3.5rem;
+    font-size: 2rem;
+}
+.feeling-container {
+    margin-top: 1rem;
 }
 .input-box {
-    width: 23rem;
-    height: 3.7rem;
+    width: 90%;
+    height: auto;
+    padding: 5px;
     font-size: 1.5rem;
     
 }
 .calender-box {
-    width: 55%;
-    height: 35rem;
+    width: 100%;
+    height: 30rem;
     margin: 0 auto;
    
 }
 .input-data {
-    font-size: 2.2rem;
-    padding: 10px;
-    border-radius: 13px;
+    font-size: 1.5rem;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 1rem;
     
 }
 .feeling-input, .calender-box {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
+
 .cdr-year, .cdr-month, .cdr-btn {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
 }
 .cdr-table > thead,.day {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 .cdr-table {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 /*register, login*/
+
+.info-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
 
 .btn-style {
     width: 26.8rem;
@@ -1262,24 +1294,18 @@ input {
 }
 
 .register-title, .login-title {
-    font-size: 4rem;
-}
-
-.user-inner {
-    width: 80%;
-    margin-top: 6rem;
+    font-size: 2.5rem;
 }
 
 .info-title {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 500;
 }
 
 .id, .pw, .pwre {
     width: 100%;
-    margin-top: 2rem;
-    font-size: 2rem;
-    height:7rem;
+    font-size: 1.3rem;
+    height:3.2rem;
     border-radius: 6px;
     font-weight: 200;
     border: solid 1.5px #bebebe;
@@ -1292,15 +1318,15 @@ input {
   }
   .btn-style {
       width: 100%;
-      height: 7rem;
-      font-size: 2.3rem;
-      margin-top: 1.3rem;
+      height: 4.3rem;
+      font-size: 1.45rem;
+      margin-top: 0;
   }
   
   .sele {
       width: 100%;
       margin: 0 auto;
-      font-size: 1rem;
+      font-size: 0.6rem;
   }
 
   .or-line-stoke {
