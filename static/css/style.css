@@ -1135,7 +1135,8 @@ input {
             letter-spacing: normal;
             text-align: left;
             color: #707070;
-            margin-top: 0.5rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
         }
         
         #backtotop {
