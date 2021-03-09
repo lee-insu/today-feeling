@@ -17,6 +17,12 @@ const handleNav = () => {
     nav.classList.toggle("nav-active");
     navAnimation();
     burger.classList.toggle("toggle");
+    let navActive = document.querySelector(".nav-active")
+    if (!navActive) {
+        nav.style.display = "none";
+    }else {
+        nav.style.display = "inline";
+    }
 };
 
 const navSlide = () => {
