@@ -1,7 +1,7 @@
 from flask import Flask, redirect, request,render_template, url_for,make_response,jsonify,session
 from flask_login import LoginManager, login_manager, logout_user
 from flask_cors import CORS
-from mysql import conn_mysqldb
+
 import os
 
 os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '2'

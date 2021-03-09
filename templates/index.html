@@ -54,7 +54,7 @@
         <div id="loading">
             <span class="loading-message">지금 표정을 분석하고 있습니다..</span>
         </div>
-        <div class="image-result">
+    <div class="image-result">
         <div class="push-result"></div>
         <div id="label-container"></div>
         <div class="share-container">
@@ -119,6 +119,17 @@
     <footer>
         <a id="backtotop"></a>
     </footer>
+    <script>
+        let navLink = document.querySelector('.header-list ul');
+        let width = document.innerWidth;
+        if (width < 480) {
+            navLink.style.display = "none";
+     
+        }
+        else {
+            navLink.style.display = "flex";
+        }
+    </script>
     <script src="../static/js/backtotop.js"></script>
     <script src="../static/js/nav.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>

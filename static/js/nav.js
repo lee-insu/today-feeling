@@ -21,7 +21,7 @@ const handleNav = () => {
     if (!navActive) {
         nav.style.display = "none";
     }else {
-        nav.style.display = "inline";
+        nav.style.display = "block";
     }
 };
 
@@ -41,6 +41,12 @@ const setNavTransition = (width) => {
 const handleResize = (e) => {
     const width = e.target.innerWidth;
     console.log(width);
+    if (width < 480) {
+        nav.style.display = "none";
+    }
+    else {
+        nav.style.display = "flex";
+    }
     setNavTransition(width);
 };
 
