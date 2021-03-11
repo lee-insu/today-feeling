@@ -28,6 +28,30 @@ def unauthorized():
 def index():
     return render_template('index.html')
 
+@app.route('/happy')
+def happy():
+    return render_template('emotion_happy.html')
+
+@app.route('/anger')
+def anger():
+    return render_template('emotion_anger.html')
+
+@app.route('/disgust')
+def disgust():
+    return render_template('emotion_disgust.html')
+
+@app.route('/sadness')
+def sadness():
+    return render_template('emotion_sadness.html')
+
+@app.route('/surprise')
+def surprise():
+    return render_template('emotion_surprise.html')
+
+@app.route('/timid')
+def timid():
+    return render_template('emotion_timid.html')
+
 @app.route('/calender')
 def calender():
     return render_template('calender.html')
